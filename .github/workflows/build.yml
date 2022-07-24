@@ -26,7 +26,7 @@ jobs:
           dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
           image: pooptest
-          version-format: poopy-$VERSION
+          tag-format: poopy-$VERSION
   tag:
     name: Add tags to repository
     if: ${{ github.event_name == 'push' }}
