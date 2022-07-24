@@ -23,10 +23,14 @@ jobs:
         run: pnpm build
       - uses: wdzeng/image@feats/format
         with:
-          dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
-          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
+          dockerhub: false
+          tag-format: linlee-$VERSION
+          build-target: linlee
           image: pooptest
-          tag-format: poopy-$VERSION
+      - uses: wdzeng/image@feats/format
+        with:
+          dockerhub: false
+          image: pooptest
   tag:
     name: Add tags to repository
     if: ${{ github.event_name == 'push' }}
