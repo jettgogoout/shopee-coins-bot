@@ -21,14 +21,17 @@ jobs:
           run_install: true
       - name: Build project
         run: pnpm build
-      - uses: wdzeng/image@feats/format
+      - name: Build linlee image
+        uses: wdzeng/image@feats/format
         with:
           dockerhub: false
           tag-format: linlee-$VERSION
           build-target: linlee
           image: pooptest
-      - uses: wdzeng/image@feats/format
+      - name: Build regular image
+        uses: wdzeng/image@feats/format
         with:
+          init: false
           dockerhub: false
           image: pooptest
   tag:
