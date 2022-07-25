@@ -26,6 +26,7 @@ jobs:
         with:
           dockerhub: false
           tag-format: linlee-$VERSION
+          tag-latest: linlee
           build-target: linlee
           image: pooptest
       - name: Build regular image
