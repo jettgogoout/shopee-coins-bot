@@ -22,14 +22,14 @@ jobs:
       - name: Build project
         run: pnpm build
       - name: Build linlee image
-        uses: wdzeng/image@feats/format
+        uses: wdzeng/image@feats/cache
         with:
           dockerhub: false
           tag-format: linlee-$VERSION
           build-target: linlee
           image: pooptest
       - name: Build regular image
-        uses: wdzeng/image@feats/format
+        uses: wdzeng/image@feats/cache
         with:
           init: false
           dockerhub: false
